@@ -18,6 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dart-lang/setup-dart@v1
-      - run: dart pub get
+      - run: dart pub get && cd perf && dart pub get
       - run: dart analyze
       - run: dart test
