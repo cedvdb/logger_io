@@ -3,7 +3,7 @@ Simple logger. Does what a logger should do: send your input messages to a serie
 
 # Logger io
 
-![logs](logs.png)
+![logs](https://raw.githubusercontent.com/cedvdb/logger_io/main/logs.png)
 
 
 # Usage
