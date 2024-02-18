@@ -1,5 +1,9 @@
 ## 1.0.2
 
+- Update readme
+
+## 1.0.2
+
 - Fix colors not displaying in flutter
 - Add success level
 
