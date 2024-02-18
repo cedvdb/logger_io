@@ -1,7 +1,6 @@
 import 'dart:convert';
 
-import 'package:ansicolor/ansicolor.dart';
-
+import 'ansi_colors.dart';
 import 'level.dart';
 
 abstract interface class Formatter {
@@ -17,15 +16,17 @@ class PrettyFormatter implements Formatter {
   static const _levelPrefix = {
     Level.debug: '[D]',
     Level.info: '[I]',
+    Level.success: '[S]',
     Level.warning: '[W]',
     Level.error: '[E]',
   };
 
   static final _levelColorizer = {
-    Level.debug: AnsiPen(),
-    Level.info: AnsiPen()..blue(),
-    Level.warning: AnsiPen()..xterm(214),
-    Level.error: AnsiPen()..red(),
+    Level.debug: const AnsiColor.lightGrey(),
+    Level.info: const AnsiColor.blue(),
+    Level.success: const AnsiColor.green(),
+    Level.warning: const AnsiColor.orange(),
+    Level.error: const AnsiColor.red(),
   };
 
   final bool _shouldAddLevelPrefix;

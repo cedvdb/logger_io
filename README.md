@@ -2,7 +2,7 @@
 A Simple logger that does what a logger should do: send your input messages to a series of outputs.
 
 # Logger io
-
+![logs](image.png)
 ![logs](https://raw.githubusercontent.com/cedvdb/logger_io/main/logs.png)
 
 
@@ -15,6 +15,7 @@ final logger = Logger();
 
 logger.d('debug message');
 logger.i('info message');
+logger.s('success message');
 logger.w('warning message');
 logger.e('error', stackTrace: StackTrace.current);
 ```

@@ -45,6 +45,11 @@ class Logger {
     _log(Level.info, message);
   }
 
+  /// Logs with success level
+  void s(Object? message) {
+    _log(Level.success, message);
+  }
+
   /// Logs with warning level
   void w(Object? message) {
     _log(Level.warning, message);

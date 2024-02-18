@@ -1,14 +1,13 @@
 name: logger_io
 description: "A Simple logger that does what a logger should do: send your input messages to a series of outputs."
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/cedvdb/logger_io
 
 environment:
   sdk: ^3.3.0
 
 # Add regular dependencies here.
-dependencies:
-  ansicolor: ^2.0.2
+# dependencies:
 
 dev_dependencies:
   lints: ^3.0.0

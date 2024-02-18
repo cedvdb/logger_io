@@ -4,8 +4,9 @@ void main() {
   final logger = Logger();
   logger.d('debug message');
   logger.i('info message');
+  logger.s('success message');
   logger.w('warning message');
-  logger.e('error', stackTrace: StackTrace.current);
+  logger.e('error message', stackTrace: StackTrace.current);
 
   // change the logging outputs depending on the environmnet
   final env = 'dev';
