@@ -1,7 +1,7 @@
 name: logger_io
 description: "Simple logger. Does what a logger should do: send your input messages to a series of outputs; and nothing more."
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/cedvdb/logger_io
 
 environment:
   sdk: ^3.3.0
