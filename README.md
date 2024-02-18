@@ -1,5 +1,5 @@
 
-Simple logger. Does what a logger should do: send your input messages to a series of outputs; and nothing more.
+A Simple logger that does what a logger should do: send your input messages to a series of outputs.
 
 # Logger io
 
@@ -87,3 +87,14 @@ class ConsoleOutput implements Output {
 ```
 
 If you wish to change the rendering, just build your own formatter.
+
+
+### Performance
+
+It is faster than a library like logger because it does not use the stack trace
+for every log (only if specified). This results in faster logging when no stack trace is used.
+
+```
+Durations for logger_io, 20 debug log (5 times): (1 ms, 2 ms, 2 ms, 1 ms, 2 ms)
+Duration for logger, 20 debug log (5 times): (15 ms, 16 ms, 16 ms, 16 ms, 13 ms)
+```

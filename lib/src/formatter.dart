@@ -53,7 +53,9 @@ class PrettyFormatter implements Formatter {
       _encodeMessage(message),
     ].join(' ');
 
-    if (stackTrace != null) formatted += '\n$stackTrace';
+    if (stackTrace != null) {
+      formatted += '\n$stackTrace';
+    }
 
     if (_shouldColorize && colorize != null) {
       return colorize(formatted);

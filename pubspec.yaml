@@ -1,5 +1,5 @@
 name: logger_io
-description: "Simple logger. Does what a logger should do: send your input messages to a series of outputs; and nothing more."
+description: "A Simple logger that does what a logger should do: send your input messages to a series of outputs."
 version: 1.0.1
 repository: https://github.com/cedvdb/logger_io
 

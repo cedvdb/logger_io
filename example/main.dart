@@ -2,7 +2,6 @@ import 'package:logger_io/logger_io.dart';
 
 void main() {
   final logger = Logger();
-
   logger.d('debug message');
   logger.i('info message');
   logger.w('warning message');
