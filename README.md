@@ -1,5 +1,5 @@
 
-A Simple logger that does what a logger should do: send your input messages to a series of outputs.
+A Simple logger that does what a logger should do: send your input messages to a series of outputs. 
 
 # Logger io
 
@@ -49,7 +49,9 @@ class ExampleCrashlyticsOutput implements Output {
     required String context,
   }) {
     if (level.value >= Level.error.value) {
-      _crashlytics.recordError(message, stackTrace);
+      _crashlytics.recordError(message, stackTrace ?? StackTrace.current);
+    } else {
+      _crashlytics.log(message.toString());
     }
   }
 }
@@ -58,32 +60,17 @@ class ExampleCrashlyticsOutput implements Output {
 ### Change the rendering in the console
 
 The code of console output is very simple, it just uses a formatter and sends 
-the result string to the console: 
+the result string to the console. If you need to change the rendering, you can create your own formatter:
 
 ```dart
+final logger = Logger(
+  outputs: [
+    ConsoleOutput(formatter: MyFormatter()),
+  ],
+);
 
-class ConsoleOutput implements Output {
-  final Formatter _formatter;
-
-  const ConsoleOutput({
-    Formatter formatter = const PrettyFormatter(),
-  }) : _formatter = formatter;
-
-  @override
-  void log({
-    required Object? message,
-    required Level level,
-    required StackTrace? stackTrace,
-    required String context,
-  }) {
-    final formatted = _formatter.format(
-      message: message,
-      level: level,
-      context: context,
-      stackTrace: stackTrace,
-    );
-    print(formatted);
-  }
+class MyFormatter implements Formatter {
+  // ...
 }
 ```
 
@@ -99,3 +86,7 @@ for every log (only if specified). This results in faster logging when no stack 
 Durations for logger_io, 20 debug log (5 times): (1 ms, 2 ms, 2 ms, 1 ms, 2 ms)
 Duration for logger, 20 debug log (5 times): (15 ms, 16 ms, 16 ms, 16 ms, 13 ms)
 ```
+
+### How can I do X ?
+
+The code of this library is simple, if you wonder how you can do something, chances are you'll find your answer by reading the source code.
