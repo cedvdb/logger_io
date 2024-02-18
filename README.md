@@ -47,7 +47,7 @@ class ExampleCrashlyticsOutput implements Output {
     required StackTrace? stackTrace,
     required String context,
   }) {
-    if (level.value >= Level.error) {
+    if (level.value >= Level.error.value) {
       _crashlytics.recordError(message, stackTrace);
     }
   }
