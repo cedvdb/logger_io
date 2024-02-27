@@ -1,3 +1,7 @@
+## 1.0.4
+
+- added const contructor
+
 ## 1.0.3
 
 - Update readme

@@ -10,6 +10,7 @@ import 'output.dart';
 ///
 /// logger.d('debug message');
 /// logger.i('info message');
+/// logger.s('success message');
 /// logger.w('warning message');
 /// logger.e('error');
 ///
@@ -27,7 +28,7 @@ class Logger {
   final Level _level;
   final String _context;
 
-  Logger({
+  const Logger({
     Level level = Level.all,
     Iterable<Output> outputs = const [ConsoleOutput()],
     String context = '',
